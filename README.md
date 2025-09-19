@@ -1,48 +1,82 @@
-Table Games Club Management System
+# Table Games Club Management System
 
-A complete management solution for table games clubs.
-This project streamlines the management of billiards, VIP billiards, foosball, and table tennis tables — helping staff save time, improve accuracy, and enhance the player experience.
+A full-stack solution for managing billiards, VIP billiards, foosball, and table tennis in clubs. The system allows you to track playing sessions, control fees, and manage operations smoothly.
 
-🚀 Features
+---
 
-Track and control table usage in real time.
+## 🚀 Features
 
-Start, pause, or end sessions with a single click.
+* Manage multiple table games (Billiards, VIP Billiards, Foosball, Tennis).
+* Start, pause, resume, and end sessions.
+* Set hourly or match-based fees dynamically.
+* Live monitoring of tables via desktop app.
+* RESTful API with Swagger documentation.
+* SQL Server integration for data persistence.
 
-Dynamic calculation of fees (per hour or per match).
+---
 
-Centralized fee configuration for each game type.
+## 🏛️ Architecture
 
-Desktop client for smooth daily operations.
+The solution follows a **Layered Architecture**:
 
-RESTful API for integration and scalability.
+* **ClubManagement (UI Layer)**
 
-🛠️ Tech Stack
+  * Windows Forms application for table management.
+  * Real-time session and fee control.
+* **ClubManagementAPI (API Layer)**
 
-Backend: ASP.NET Core 7 (C#), RESTful API, Swagger/OpenAPI.
+  * ASP.NET Core RESTful API.
+  * Swagger for easy documentation and testing.
+* **ClubManagementBusinessLayer (Business Layer)**
 
-Frontend: Windows Forms (C#).
+  * Core logic for tables, sessions, and fees.
+  * Implements OOP principles: Inheritance, Composition, Events & Delegates.
+* **ClubManagementDataAccessLayer (Data Layer)**
 
-Database: SQL Server (Entity Framework Core).
+  * Data access classes and helpers.
+  * SQL Server as a database.
 
-Architecture: Layered Architecture
+---
 
-UI Layer: Windows Forms desktop app with custom controls.
+## 🛠️ Technologies Used
 
-Business Layer: Core logic for tables, fees, and game sessions.
+* **C# / .NET 7**
+* **ASP.NET Core** (Web API)
+* **Windows Forms** (Desktop UI)
+* **Entity Framework Core** / ADO.NET
+* **SQL Server**
+* **Swagger / Swashbuckle**
 
-Data Access Layer: Data persistence, SQL Server integration.
+---
 
-API Layer: RESTful API exposing all operations.
+## 🔍 OOP Concepts in Use
 
-OOP Concepts:
+* **Inheritance:** All games inherit from a base `Table` class.
+* **Composition:** Each table composes a `TableFees` object for fee management.
+* **Events & Delegates:** Fees updates trigger events to refresh dues dynamically.
+* **Abstraction & Encapsulation:** Clean interfaces and secure data handling.
 
-Inheritance & Abstraction (Table base class for all games).
+---
 
-Composition (linking TableFees to tables).
+## 📦 Getting Started
 
-Events & Delegates for fee updates (FeesChanged).
+1. Clone the repository:
 
-Encapsulation for business logic.
+   ```bash
+   git clone https://github.com/Albaraa-Albaraq/TableGamesClubManagement.git
+   ```
+2. Open the solution in Visual Studio.
+3. Set `ClubManagementAPI` as the startup project and run it.
+4. Launch `ClubManagement` (Windows Forms app) for the UI.
 
-📂 Project Structure
+---
+
+## 📸 Screenshots
+
+![UI Screenshot](./assets/screenshot.png)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
